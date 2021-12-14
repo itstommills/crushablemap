@@ -19,6 +19,7 @@
 <body>
 
   <div id="map"></div>
+  <div id="menu"></div>
 
 
   <script>
@@ -34,12 +35,12 @@
         map.addSource('ciderys', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
-            data: 'https://itstommills.github.io/ukcidermap/CideryGeoJSON.json'
+            data: 'https://itstommills.github.io/crushablemap/CideryGeoJSON.json'
         });
         map.addSource('winerys', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
-            data: 'https://itstommills.github.io/ukcidermap/WineryGeoJSON.json'
+            data: 'https://itstommills.github.io/crushablemap/WineryGeoJSON.json'
         });
 
         map.addLayer({
@@ -48,7 +49,9 @@
             'type': 'symbol',
             'layout': {
               'icon-image': 'cider',
-              'icon-size': 0.12
+              'icon-size': 0.13,
+              'icon-allow-overlap': true,
+              'visibility': 'visible'
             }
         });
 
@@ -58,7 +61,9 @@
             'type': 'symbol',
             'layout': {
               'icon-image': 'wine',
-              'icon-size': 0.12
+              'icon-size': 0.13,
+              'icon-allow-overlap': true,
+              'visibility': 'visible'
             }
         });
     });
@@ -80,29 +85,32 @@
 
     new mapboxgl.Popup()
         .setLngLat(coordinates)
-        .setHTML (`<table class="tableMap" style="table-layout:fixed; width:350px">
-                        <colgroup>
-                            <col span="1" style="width: 10%;">
-                            <col span="1" style="width: 90%;">
-                        </colgroup>
-                        <tbody>
-                        <tr>
-                            <td class="tdMap" colspan='2' style="font-size:23px; text-align:center;" height="50"><strong>${title}</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="tdMap" style="text-align:center; vertical-align:middle;"><span class="material-icons md-18">language</span></td>
-                            <td class="tdMap" style="font-size:14px">${buying}</td>
-                        </tr>
-                        <tr>
-                            <td class="tdMap" style="text-align:center"><span class="material-icons md-18">my_location</span></td>
-                            <td class="tdMap" style="font-size:14px">${address}</td>
-                        </tr>
-                        </tbody>
-                        </table>`)
+        .setHTML (`${title}`)
         .setMaxWidth("400px")
         .addTo(map);
       });
 
+      // When a click event occurs on a feature in the places layer, open a popup at the
+      // location of the feature, with description HTML from its properties.
+      map.on('click', 'winerys-layer', function (e) {
+          var coordinates = e.features[0].geometry.coordinates.slice();
+          var title = e.features[0].properties.title;
+          var buying = e.features[0].properties.buying;
+          var address = e.features[0].properties.address;
+
+          // Ensure that if the map is zoomed out such that multiple
+          // copies of the feature are visible, the popup appears
+          // over the copy being pointed to.
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+
+      new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML (`${title}`)
+          .setMaxWidth("400px")
+          .addTo(map);
+        });
 
     // Change the cursor to a pointer when the mouse is over the places layer.
     map.on('mouseenter', 'ciderys-layer', function () {
