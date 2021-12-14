@@ -1,0 +1,38 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+			"type": "Feature",
+			"properties": {
+				"title": "Poulton Hill Estate",
+				"post": "www.google.co.uk"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-1.856197799,51.68405302
+				]
+			}
+		},{
+			"type": "Feature",
+			"properties": {
+				"title": "Woodchester Valley Vineyard",
+				"post": "www.google.co.uk"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-2.240009459,51.71052504
+				]
+			}
+		},{
+			"type": "Feature",
+			"properties": {
+				"title": "Three Choirs Vineyard",
+				"post": "www.google.co.uk"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-2.414803943,51.95867564
+				]
+			}
+		}
+	]
+}

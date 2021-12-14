@@ -1,0 +1,27 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+			"type": "Feature",
+			"properties": {
+				"title": "Little Pomona",
+				"post": "http://craftcider.uk/little-pomona/"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-2.49451,52.16932
+				]
+			}
+		},{
+			"type": "Feature",
+			"properties": {
+				"title": "Ross on Wye Cider & Perry Co",
+				"post": "http://craftcider.uk/ross-on-wye-cider-perry-company/"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-2.6320935320326484,51.91777469612836
+				]
+			}
+		}
+	]
+}
