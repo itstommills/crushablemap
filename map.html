@@ -34,7 +34,12 @@
         map.addSource('ciderys', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
-            data: 'https://itstommills.github.io/ukcidermap/ciderMapLocations.json'
+            data: 'https://github.com/itstommills/crushablemap/blob/2103030462404aff88650ee52ac8f441d9cb2dcd/Cidery%20GeoJSON.json'
+        });
+        map.addSource('winerys', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'https://github.com/itstommills/crushablemap/blob/2103030462404aff88650ee52ac8f441d9cb2dcd/Winery%20GeoJSON.json'
         });
 
         map.addLayer({
@@ -43,7 +48,17 @@
             'type': 'symbol',
             'layout': {
               'icon-image': 'cider',
-              'icon-size': ['interpolate', ['linear'], ['zoom'], 0.12, 0.05]
+              'icon-size': 0.12
+            }
+        });
+
+        map.addLayer({
+            'id': 'winerys-layer',
+            'source': 'winerys',
+            'type': 'symbol',
+            'layout': {
+              'icon-image': 'wine',
+              'icon-size': 0.12
             }
         });
     });
