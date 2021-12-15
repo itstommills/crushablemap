@@ -37,10 +37,17 @@
             // Use a URL for the value for the `data` property.
             data: 'https://itstommills.github.io/crushablemap/CideryGeoJSON.json'
         });
+
         map.addSource('winerys', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
             data: 'https://itstommills.github.io/crushablemap/WineryGeoJSON.json'
+        });
+
+        map.addSource('winerys', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'https://itstommills.github.io/crushablemap/ShopGeoJSON.json'
         });
 
         map.addLayer({
@@ -61,6 +68,19 @@
             'type': 'symbol',
             'layout': {
               'icon-image': 'wine',
+              'icon-size': 0.13,
+              'icon-allow-overlap': true,
+              'visibility': 'visible'
+            }
+        });
+    });
+
+        map.addLayer({
+            'id': 'shop-layer',
+            'source': 'shop',
+            'type': 'symbol',
+            'layout': {
+              'icon-image': 'store',
               'icon-size': 0.13,
               'icon-allow-overlap': true,
               'visibility': 'visible'
