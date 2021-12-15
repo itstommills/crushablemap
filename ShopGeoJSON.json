@@ -1,0 +1,27 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+			"type": "Feature",
+			"properties": {
+				"title": "Shop Cuvée",
+				"post": "www.google.co.uk"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-0.06673516322364095, 51.52713510652446
+				]
+			}
+		},{
+			"type": "Feature",
+			"properties": {
+				"title": "Two Belly Cheese & Beer Shop",
+				"post": "www.google.co.uk"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-2.613761043459049, 51.46868419913569
+				]
+			}
+		}
+	]
+}
