@@ -4,7 +4,7 @@
 			"type": "Feature",
 			"properties": {
 				"title": "Poulton Hill Estate",
-				"post": "www.google.co.uk"
+				"url": "www.google.co.uk"
 			},
 			"geometry": {
 				"type": "Point",
@@ -15,7 +15,7 @@
 			"type": "Feature",
 			"properties": {
 				"title": "Woodchester Valley Vineyard",
-				"post": "www.google.co.uk"
+				"url": "www.google.co.uk"
 			},
 			"geometry": {
 				"type": "Point",
@@ -26,7 +26,7 @@
 			"type": "Feature",
 			"properties": {
 				"title": "Three Choirs Vineyard",
-				"post": "www.google.co.uk"
+				"url": "www.google.co.uk"
 			},
 			"geometry": {
 				"type": "Point",

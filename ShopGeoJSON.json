@@ -4,7 +4,7 @@
 			"type": "Feature",
 			"properties": {
 				"title": "Shop Cuvée",
-				"post": "www.google.co.uk"
+				"url": "www.google.co.uk"
 			},
 			"geometry": {
 				"type": "Point",
@@ -15,7 +15,7 @@
 			"type": "Feature",
 			"properties": {
 				"title": "Two Belly Cheese & Beer Shop",
-				"post": "www.google.co.uk"
+				"url": "www.google.co.uk"
 			},
 			"geometry": {
 				"type": "Point",
